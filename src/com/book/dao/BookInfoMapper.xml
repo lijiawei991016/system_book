@@ -23,7 +23,10 @@
 			on system_book_info.categoryId=system_book_category.id
 			<where>
 				<if test='category!=null and category!="全部"'>
-					category=#{category}
+					and category=#{category}
+				</if>
+				<if test='bookName!=null and bookName!="无"'>
+					and bookName like CONCAT('%',#{bookName},'%')
 				</if>
 			</where>
 			limit #{from},#{pageSize}
@@ -35,7 +38,10 @@
 			on system_book_info.categoryId=system_book_category.id
 			<where>
 				<if test='category!=null and category!="全部"'>
-					category=#{category}
+					and category=#{category}
+				</if>
+				<if test='bookName!=null and bookName!="无"'>
+					and bookName like CONCAT('%',#{bookName},'%')
 				</if>
 			</where>
 	</select>

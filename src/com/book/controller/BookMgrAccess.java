@@ -30,9 +30,9 @@ public class BookMgrAccess extends HttpServlet {
 		// 获取所有分类信息
 		List<Category> categories = bookService.listCategories();
 		// 获取所有书籍信息
-		List<BookInfo> books = bookService.listBook(currentPage,null);
+		List<BookInfo> books = bookService.listBook(currentPage,null,null);
 		// 获取书籍数量
-		Integer count = bookService.bookCount(null);
+		Integer count = bookService.bookCount(null,null);
 		// 调用服务，生成分页导航字符串
 		String navStr = bookService.bookNavStr(currentPage, count);
 		// 把信息放入request

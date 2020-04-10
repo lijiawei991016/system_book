@@ -12,8 +12,8 @@
     	<!-- header -->
     	<%@ include file="user_include/header.jsp" %>
     	<!-- /header -->
-    	<form id="search-bar" action="" method="post">
-    		书名：<input type="text" class="txt" name="condition" />
+    	<form id="search-bar" action="index" method="post">
+    		书名：<input type="text" class="txt" name="bookName" />
     		<input id="search-btn" type="submit" value=" 搜索图书 " />
     	</form>
     	<div id="main">
@@ -21,16 +21,16 @@
     			<div class="box-left">
     				<div class="box-title">分类畅销榜</div>
     				<div class="box-content">
-						<p>·<a href="index?category=全部">全部</a></p>
+						<p>·<a href="index?category=全部&bookName=无">全部</a></p>
 						<c:forEach items="${categories }" var="catg">
-						<p>·<a href="index?category=${catg.category }">${catg.category}</a></p>
+						<p>·<a href="index?category=${catg.category }&bookName=无">${catg.category}</a></p>
 						</c:forEach> 					
     				</div>
     			</div>
     		</div>
     		<div class="section-right">
     			<div class="box-right">
-    				<div class="box-title">您目前浏览的图书【搜索条件——分类：${empty categoryMessage?"全部":categoryMessage }；书名：无】</div>
+    				<div class="box-title">您目前浏览的图书【搜索条件——分类：${empty categoryMessage?"全部":categoryMessage }；书名：${empty bookName?"无":bookName }】</div>
     				<div class="paging" style="border-bottom: 1px solid  #64A26F; color: #006666; ">
     					 ${navStr }	
     					 共有图书${count}种，分${countPage}页显示，每页显示${pageSize}个商品

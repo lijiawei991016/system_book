@@ -18,17 +18,20 @@ public interface BookInfoMapper {
 	 * @param from-起始索引（0开始）
 	 * @param pageSize-每页数量
 	 * @param category--分类名称
+	 * @param bookName--搜索的图书名（模糊查询）
 	 * @return 书籍信息列表
 	 */
 	List<BookInfo> listBook(
 			@Param("from") Integer from,@Param("pageSize") Integer pageSize,
-			@Param("category") String category);
+			@Param("category") String category,@Param("bookName") String bookName);
 	/**
 	 * 返回书籍数量
 	 * @param category--分类名称
+	 * @param bookName--搜索的图书名（模糊查询）
 	 * @return
 	 */
-	Integer bookCount(@Param("category") String category);
+	Integer bookCount(@Param("category") String category,
+			@Param("bookName") String bookName);
 }
 
 

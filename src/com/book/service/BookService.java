@@ -79,24 +79,27 @@ public class BookService {
 	 * 查询书籍信息
 	 * @param currentPage--当前页
 	 * @param category--分类名称
+	 * @param bookName--搜索的图书名（模糊查询）
 	 * @return 书籍信息列表
 	 */
-	public List<BookInfo> listBook(Integer currentPage,String category){
+	public List<BookInfo> listBook(Integer currentPage,String category,
+			String bookName){
 		SqlSession sqlSession = MyBatisUtil.open();
 		List<BookInfo> result = sqlSession.getMapper(BookInfoMapper.class)
-				.listBook((currentPage-1)*PAGESIZE,PAGESIZE,category);
+				.listBook((currentPage-1)*PAGESIZE,PAGESIZE,category,bookName);
 		sqlSession.close();
 		return result;
 	}
 	/**
 	 * 返回书籍数量
 	 * @param category--分类名称
+	 * @param bookName--搜索的图书名（模糊查询）
 	 * @return
 	 */
-	public Integer bookCount(String category) {
+	public Integer bookCount(String category,String bookName) {
 		SqlSession sqlSession = MyBatisUtil.open();
 		int result = sqlSession.getMapper(BookInfoMapper.class)
-				.bookCount(category);
+				.bookCount(category,bookName);
 		sqlSession.close();
 		return result;
 	}
