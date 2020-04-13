@@ -7,6 +7,14 @@
 	<select id="findUserByIdAndPsw" resultType="User">
 		select * from system_book_user where userId=#{userId} and userPsw=#{userPsw}
 	</select>
+	<!-- 根据账户查询账户信息 -->
+	<select id="findUserById" resultType="User">
+		select * from system_book_user where userId=#{userId}
+	</select>
+	<!-- 添加账户到数据库中 -->
+	<insert id="addUser" parameterType="User">
+		insert into system_book_user values(#{userId},#{userPsw},#{userName},#{role})
+	</insert>
 </mapper>
 
 

@@ -13,24 +13,24 @@
     	<!-- /header --> 
     	<div id="main">
     		<div class="box" id="register">
-    			<div class="title">新用户注册</div>
-<form action="" method="post" style="margin: 10px;">
+    			<div class="title">新用户注册&nbsp;&nbsp;<span style="color: red;">${messg }</span></div>
+<form action="add_user" method="post" style="margin: 10px;">
 	<table cellspacing="0" class="no-border">
     	<tr>
     		<td style="text-align: right;">登录账号：</td>
-    		<td><input type="text" name="loginId" class="txt" value="" /></td>
+    		<td><input type="text" name="userId" class="txt" value="" /></td>
     	</tr>
     	<tr>
     		<td style="text-align: right;">登录密码：</td>
-    		<td><input type="password" name="loginPsw" class="txt" value="" /></td>
+    		<td><input type="password" name="userPsw" class="txt" value="" /></td>
     	</tr>
     	<tr>
     		<td style="text-align: right;">再次输入密码：</td>
-    		<td><input type="password" name="reLoginPsw" class="txt" value="" /></td>
+    		<td><input type="password" name="reUserPsw" class="txt" value="" /></td>
     	</tr>
     	<tr>
     		<td style="text-align: right;">真实姓名：</td>
-    		<td><input type="text" name="name" class="txt" value="" /></td>
+    		<td><input type="text" name="userName" class="txt" value="" /></td>
     	</tr>
     	<tr>
     		<td style="text-align: right;">验证码：</td>
@@ -38,7 +38,9 @@
     	</tr>
     	<tr>
     		<td>&nbsp;</td>
-    		<td><img id="img" src="images/code.jpg" />&nbsp;&nbsp;看不清？<a href="#" style="color: #64A26F;">换张图</a></td>
+    		<td><img id="codeImg" 
+			src="${pageContext.request.contextPath}/code_img" /><a
+			href="javascript:changeImg();" rel="external nofollow">看不清</a><br /></td>
     	</tr>
     	<tr>
     		<td>&nbsp;</td>
@@ -52,5 +54,12 @@
 		<%@ include file="admin_include/footer.jsp" %>
 		<!-- /footer -->
 	</div>
+<script type="text/javascript">
+   function changeImg(){
+     var img = document.getElementById("codeImg");
+     img.src="${pageContext.request.contextPath}/code_img?"+new Date().getTime();
+   }
+   changeImg();
+ </script>
   </body>
 </html>

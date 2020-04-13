@@ -5,6 +5,16 @@ public class User {
 	private String userPsw;
 	private String userName;
 	private Integer role;
+	public User() {
+		super();
+	}
+	public User(String userId, String userPsw, String userName, Integer role) {
+		super();
+		this.userId = userId;
+		this.userPsw = userPsw;
+		this.userName = userName;
+		this.role = role;
+	}
 	public String getUserId() {
 		return userId;
 	}
