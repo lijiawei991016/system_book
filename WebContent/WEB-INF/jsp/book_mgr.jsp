@@ -15,7 +15,8 @@
     	<!-- /header -->
     	<div id="main">
 			<div class="section-left">    	
-				<h2>图书信息列表</h2>		
+				<h2>图书信息列表</h2>	
+				<p style="color: red;">${infor }</p>	
 				<table class="table" cellspacing="0" style="font-size: 12px;">
 			    	<tr>
 			    		<td class="header" width="100">书名</td>
@@ -31,7 +32,7 @@
 			    		<td>${book.author }</td>
 			    		<td>${book.category.category }</td>	
 			    		<td>${book.price }</td>
-			    		<td><a href="#?id=${book.id }">删除</a>&nbsp;<a href="book-edit.html?id=${book.id }">编辑</a></td>
+			    		<td><a href="delete_book?id=${book.id }">删除</a>&nbsp;<a href="book-edit.html?id=${book.id }">编辑</a></td>
 			    	</tr>
 			    	</c:forEach>
 			    </table>

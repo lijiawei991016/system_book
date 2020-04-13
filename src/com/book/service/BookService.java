@@ -126,6 +126,19 @@ public class BookService {
 			return "<span class='fr'><a href='"+where+"?currentPage=1'>首页</a>&nbsp;<a href='"+where+"?currentPage="+(currentPage-1)+"'>上一页</a>&nbsp;<a href='"+where+"?currentPage="+(currentPage+1)+"'>下一页</a>&nbsp;<a href='"+where+"?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
 		}
 	}
+	/**
+	 * 根据id删除图书
+	 * @param id--图书Id
+	 * @return 0-失败 1-成功
+	 */
+	public int deleteBookById(Integer id) {
+		int result = 0;
+		SqlSession sqlSession = MyBatisUtil.open();
+		result = sqlSession.getMapper(BookInfoMapper.class).deleteBookById(id);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
 }
 
 

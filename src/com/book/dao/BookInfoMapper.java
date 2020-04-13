@@ -32,6 +32,12 @@ public interface BookInfoMapper {
 	 */
 	Integer bookCount(@Param("category") String category,
 			@Param("bookName") String bookName);
+	/**
+	 * 根据id删除图书
+	 * @param id--图书Id
+	 * @return 0-失败 1-成功
+	 */
+	int deleteBookById(Integer id);
 }
 
 

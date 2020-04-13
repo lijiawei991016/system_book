@@ -45,6 +45,10 @@
 				</if>
 			</where>
 	</select>
+	<!-- 根据图书id删除对应图书 -->
+	<delete id="deleteBookById" parameterType="int">
+		delete from system_book_info where id=#{id}
+	</delete>
 </mapper>
 
 
