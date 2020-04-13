@@ -38,6 +38,12 @@ public interface BookInfoMapper {
 	 * @return 0-失败 1-成功
 	 */
 	int deleteBookById(Integer id);
+	/**
+	 * 根据图书id查找对应图书
+	 * @param id
+	 * @return null-失败  成功返回图书对象
+	 */
+	BookInfo findBookById(Integer id);
 }
 
 

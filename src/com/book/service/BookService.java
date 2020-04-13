@@ -139,6 +139,19 @@ public class BookService {
 		sqlSession.close();
 		return result;
 	}
+	/**
+	 * 根据图书id查找对应图书
+	 * @param id
+	 * @return null-失败  成功返回图书对象
+	 */
+	public BookInfo findBookById(Integer id) {
+		BookInfo book = null;
+		SqlSession sqlSession = MyBatisUtil.open();
+		book = sqlSession.getMapper(BookInfoMapper.class).findBookById(id);
+		sqlSession.commit();
+		sqlSession.close();
+		return book;
+	}
 }
 
 
