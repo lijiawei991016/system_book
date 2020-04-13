@@ -56,7 +56,7 @@ public class IndexAccess extends HttpServlet {
 		// 获取书籍数量
 		Integer count = bookService.bookCount(category,bookName);
 		// 调用服务，生成分页导航字符串
-		String navStr = bookService.bookNavStr(currentPage, count);
+		String navStr = bookService.bookNavStr(currentPage, count,"index");
 		// 获取总页数
 		Integer countPage = count%bookService.PAGESIZE==0?
 				count/bookService.PAGESIZE:count/bookService.PAGESIZE+1;

@@ -107,22 +107,23 @@ public class BookService {
 	 * 返回书籍分页导航字符串
 	 * @param currentPage--当前页码
 	 * @param count--总共书籍数量
+	 * @param where--跳转的servlet
 	 * @return
 	 */
-	public String bookNavStr(Integer currentPage,Integer count) {
+	public String bookNavStr(Integer currentPage,Integer count,String where) {
 		// 求得总共页数
 		Integer countPage = count%PAGESIZE==0?count/PAGESIZE:count/PAGESIZE+1;
 		if(currentPage==1 && countPage!=1) {
-			return "<span class='fr'><a href='book_mgr?currentPage=1'>首页</a>&nbsp;<a>上一页</a>&nbsp;<a href='book_mgr?currentPage=2'>下一页</a>&nbsp;<a href='book_mgr?currentPage="+countPage+"'>尾页</a>&nbsp;</span>"; 
+			return "<span class='fr'><a href='"+where+"?currentPage=1'>首页</a>&nbsp;<a>上一页</a>&nbsp;<a href='"+where+"?currentPage=2'>下一页</a>&nbsp;<a href='"+where+"?currentPage="+countPage+"'>尾页</a>&nbsp;</span>"; 
 		}
 		else if(currentPage==countPage && countPage!=1) {
-			return "<span class='fr'><a href='book_mgr?currentPage=1'>首页</a>&nbsp;<a href='book_mgr?currentPage="+(currentPage-1)+"'>上一页</a>&nbsp;<a>下一页</a>&nbsp;<a href='book_mgr?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
+			return "<span class='fr'><a href='"+where+"?currentPage=1'>首页</a>&nbsp;<a href='"+where+"?currentPage="+(currentPage-1)+"'>上一页</a>&nbsp;<a>下一页</a>&nbsp;<a href='"+where+"?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
 		}
 		else if(countPage == 1) {
-			return "<span class='fr'><a href='book_mgr?currentPage=1'>首页</a>&nbsp;<a>上一页</a>&nbsp;<a>下一页</a>&nbsp;<a href='book_mgr?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
+			return "<span class='fr'><a href='"+where+"?currentPage=1'>首页</a>&nbsp;<a>上一页</a>&nbsp;<a>下一页</a>&nbsp;<a href='"+where+"?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
 		}
 		else {
-			return "<span class='fr'><a href='book_mgr?currentPage=1'>首页</a>&nbsp;<a href='book_mgr?currentPage="+(currentPage-1)+"'>上一页</a>&nbsp;<a href='book_mgr?currentPage="+(currentPage+1)+"'>下一页</a>&nbsp;<a href='book_mgr?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
+			return "<span class='fr'><a href='"+where+"?currentPage=1'>首页</a>&nbsp;<a href='"+where+"?currentPage="+(currentPage-1)+"'>上一页</a>&nbsp;<a href='"+where+"?currentPage="+(currentPage+1)+"'>下一页</a>&nbsp;<a href='"+where+"?currentPage="+countPage+"'>尾页</a>&nbsp;</span>";
 		}
 	}
 }

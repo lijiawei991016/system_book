@@ -34,7 +34,7 @@ public class BookMgrAccess extends HttpServlet {
 		// 获取书籍数量
 		Integer count = bookService.bookCount(null,null);
 		// 调用服务，生成分页导航字符串
-		String navStr = bookService.bookNavStr(currentPage, count);
+		String navStr = bookService.bookNavStr(currentPage, count,"book_mgr");
 		// 把信息放入request
 		request.setAttribute("categories", categories);
 		request.setAttribute("books", books);
