@@ -16,7 +16,8 @@
     	<div id="main">
 			<div class="section-left">    	
 				<h2>编辑图书信息</h2>
-				<form action="book-edit.html" method="post">
+				<p style="color: red;">${message }</p>
+				<form action="alter_book" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${book.id }" />
 					<p>图书书名：<input type="text" name="bookName" value="${book.bookName }"  /></p>
 					<p>图书作者：<input type="text" name="author" value="${book.author }"  /></p>
@@ -34,7 +35,7 @@
 							</c:forEach>								
 						</select>
 					</p>
-					<p>图书售价：<input type="text" name="price" value="${book.price }" /></p>
+					<p>图书售价：<input type="number" name="price" value="${book.price }" step="0.01" /></p>
 					<p>图书出版社：<input type="text" name="publisher" value="${book.publisher }"  /></p>  
 					<c:choose>
 						<c:when test="${!empty book.photo }">

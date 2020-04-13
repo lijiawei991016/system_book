@@ -44,6 +44,12 @@ public interface BookInfoMapper {
 	 * @return null-失败  成功返回图书对象
 	 */
 	BookInfo findBookById(Integer id);
+	/**
+	 * 根据id修改图书信息
+	 * @param book--图书对象
+	 * @return 1-成功 0-失败
+	 */
+	int alterBookById(BookInfo book);
 }
 
 

@@ -152,6 +152,19 @@ public class BookService {
 		sqlSession.close();
 		return book;
 	}
+	/**
+	 * 根据id修改图书信息
+	 * @param book--图书对象
+	 * @return 1-成功 0-失败
+	 */
+	public int alterBookById(BookInfo book) {
+		int result = 0;
+		SqlSession sqlSession = MyBatisUtil.open();
+		result = sqlSession.getMapper(BookInfoMapper.class).alterBookById(book);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
 }
 
 

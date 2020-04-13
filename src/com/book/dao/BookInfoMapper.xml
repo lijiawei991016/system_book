@@ -54,6 +54,33 @@
 		select id,bookName,author,categoryId AS cid,publisher,price,photo 
 			from system_book_info where id=#{id}
 	</select>
+	<!-- 根据图书Id修改图书信息 -->
+	<update id="alterBookById" parameterType="User">
+		update system_book_info 
+			<set>
+				<if test="bookName != null">
+					bookName=#{bookName},
+				</if>
+				<if test="author != null">
+					author=#{author},
+				</if>
+				<if test="publisher != null">
+					publisher=#{publisher},
+				</if>
+				<if test="price != null">
+					price=#{price},
+				</if>
+				<if test="photo != null">
+					photo=#{photo},
+				</if>
+				<if test="category.id != null">
+					categoryId=#{category.id},
+				</if>
+			</set>
+			<where>
+				id=#{id}
+			</where>
+	</update>
 </mapper>
 
 
