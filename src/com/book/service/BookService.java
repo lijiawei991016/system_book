@@ -208,6 +208,19 @@ public class BookService {
 		sqlSession.close();
 		return result;
 	}
+	/**
+	 * 根据用户id获取其购物车中的所有商品
+	 * @param uid--用户id
+	 * @return 用户的购物车中的所有商品
+	 */
+	public List<Cart> findCartsByUid(String uid){
+		List<Cart> carts = null;
+		SqlSession sqlSession = MyBatisUtil.open();
+		carts = sqlSession.getMapper(CartMapper.class).findCartsByUid(uid);
+		sqlSession.commit();
+		sqlSession.close();
+		return carts;
+	}
 }
 
 

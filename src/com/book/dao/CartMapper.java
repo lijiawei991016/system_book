@@ -1,5 +1,7 @@
 package com.book.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.book.pojo.Cart;
@@ -25,4 +27,14 @@ public interface CartMapper {
 	 * @return 成功1，失败0
 	 */
 	int alterCart(@Param("bid") Integer bid,@Param("uid") String uid);
+	/**
+	 * 根据用户id获取其购物车中的所有商品
+	 * @param uid--用户id
+	 * @return 用户的购物车中的所有商品
+	 */
+	List<Cart> findCartsByUid(String uid);
 }
+
+
+
+

@@ -25,22 +25,19 @@
     					<td class="header"  width="60">小计</td>
     					<td class="header" width="60">操作</td>
     				</tr>
+    				<c:set var="sum" value="0"/>
+    				<c:forEach items="${carts }" var="cart">
+    					<c:set var="sum" value="${sum=sum+cart.count*cart.book.price }"/>
+    					<tr>
+    					<td>《${cart.book.bookName }》</td>
+    					<td>￥${cart.book.price }</td>
+    					<td>${cart.count } 本</td>
+    					<td>￥${cart.count*cart.book.price }</td>
+    					<td><a href="#?cartId=${cart.cartId }">移除</a></td>
+    					</tr>
+    				</c:forEach>
     				<tr>
-    					<td>《红楼小讲》</td>
-    					<td>￥15.0</td>
-    					<td>7 本</td>
-    					<td>￥105.0</td>
-    					<td><a href="#">移除</a></td>
-    				</tr>
-    				<tr>
-    					<td>《尸鬼》</td>
-    					<td>￥170.0</td>
-    					<td>1 本</td>
-    					<td>￥170.0</td>
-    					<td><a href="#">移除</a></td>
-    				</tr>
-    				<tr>
-    					<td colspan="5" class="header" style="text-align: right;">总计：￥275.0</td>
+    					<td colspan="5" class="header" style="text-align: right;">总计：￥${sum }</td>
     				</tr>
     			</table>	
     			<div style="text-align: center; font-size: 14px; line-height: 40px;">

@@ -25,6 +25,13 @@
 	<update id="alterCart">
 		update system_book_cart set count=count+1 where bookId=#{bid} and uid=#{uid}
 	</update>
+	<!-- 根据用户id查询其购物车中所有商品 -->
+	<select id="findCartsByUid" parameterType="string" resultMap="listCart">
+		select * from system_book_cart 
+			inner join system_book_user on system_book_cart.uid=system_book_user.userId
+			inner join system_book_info on system_book_cart.bookId=system_book_info.id
+			where uid=#{uid}
+	</select>
 </mapper>
 
 
