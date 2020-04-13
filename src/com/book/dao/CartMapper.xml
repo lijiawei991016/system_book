@@ -34,22 +34,6 @@
 	</select>
 	<!-- 根据商品id移除出购物车 -->
 	<delete id="deleteCartById" parameterType="int">
-		delete from system_book_cart where cartId=#{id}
+		delete from system_book_cart where cartId=#{cartId}
 	</delete>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -226,10 +226,10 @@ public class BookService {
 	 * @param id--购物车中的编码
 	 * @return 1-成功 0-失败
 	 */
-	public int deleteCartById(Integer id) {
+	public int deleteCartById(Integer cartId) {
 		int result = 0;
 		SqlSession sqlSession = MyBatisUtil.open();
-		result = sqlSession.getMapper(CartMapper.class).deleteCartById(id);
+		result = sqlSession.getMapper(CartMapper.class).deleteCartById(cartId);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

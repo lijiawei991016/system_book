@@ -34,6 +34,7 @@ public class DeleteCartAction extends HttpServlet {
 		request.getRequestDispatcher("/cart").forward(request, response);
 		return;
 	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
