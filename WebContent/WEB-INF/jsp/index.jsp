@@ -23,6 +23,7 @@
     		<div class="section-right">
     			<div class="box-right">
     				<div class="box-title">您目前浏览的图书【搜索条件——分类：${empty categoryMessage?"全部":categoryMessage }；书名：${empty bookName?"无":bookName }】</div>
+    				<p style="color: red;">${message }</p>
     				<div class="paging" style="border-bottom: 1px solid  #64A26F; color: #006666; ">
     					 ${navStr }	
     					 共有图书${count}种，分${countPage}页显示，每页显示${pageSize}个商品
@@ -47,7 +48,7 @@
 							出版社：${book.publisher }<br />							
 							售价：￥<span style="color: #990000;">${book.price }</span>		<br />					
     					</div>
-    					<a href="#?id=${book.id }" class="btn-buy">购&nbsp;&nbsp;买</a>    					
+    					<a href="buy?id=${book.id }" class="btn-buy">购&nbsp;&nbsp;买</a>    					
     					<div class="cf"></div>
     				</div>    
   					</c:forEach>				

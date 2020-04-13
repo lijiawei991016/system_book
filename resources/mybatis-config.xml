@@ -30,6 +30,7 @@
     <mapper resource="com/book/dao/UserMapper.xml"/>
     <mapper resource="com/book/dao/CategoryMapper.xml"/>
     <mapper resource="com/book/dao/BookInfoMapper.xml"/>
+    <mapper resource="com/book/dao/CartMapper.xml"/>
   </mappers>
 </configuration>
 

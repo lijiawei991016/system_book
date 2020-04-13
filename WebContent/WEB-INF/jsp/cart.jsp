@@ -23,21 +23,24 @@
     					<td class="header"  width="60">单价</td>
     					<td class="header"  width="60">购物数量</td>
     					<td class="header"  width="60">小计</td>
+    					<td class="header" width="60">操作</td>
     				</tr>
     				<tr>
     					<td>《红楼小讲》</td>
     					<td>￥15.0</td>
     					<td>7 本</td>
     					<td>￥105.0</td>
+    					<td><a href="#">移除</a></td>
     				</tr>
     				<tr>
     					<td>《尸鬼》</td>
     					<td>￥170.0</td>
     					<td>1 本</td>
     					<td>￥170.0</td>
+    					<td><a href="#">移除</a></td>
     				</tr>
     				<tr>
-    					<td colspan="4" class="header" style="text-align: right;">总计：￥275.0</td>
+    					<td colspan="5" class="header" style="text-align: right;">总计：￥275.0</td>
     				</tr>
     			</table>	
     			<div style="text-align: center; font-size: 14px; line-height: 40px;">
