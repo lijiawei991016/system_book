@@ -107,7 +107,7 @@ public class BookService {
 	 * 返回书籍分页导航字符串
 	 * @param currentPage--当前页码
 	 * @param count--总共书籍数量
-	 * @param where--跳转的servlet
+	 * @param where--跳转的servlet名称
 	 * @return
 	 */
 	public String bookNavStr(Integer currentPage,Integer count,String where) {
