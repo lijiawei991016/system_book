@@ -221,6 +221,19 @@ public class BookService {
 		sqlSession.close();
 		return carts;
 	}
+	/**
+	 * 根据购物车id移除商品
+	 * @param id--购物车中的编码
+	 * @return 1-成功 0-失败
+	 */
+	public int deleteCartById(Integer id) {
+		int result = 0;
+		SqlSession sqlSession = MyBatisUtil.open();
+		result = sqlSession.getMapper(CartMapper.class).deleteCartById(id);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
 }
 
 

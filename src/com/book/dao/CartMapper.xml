@@ -32,6 +32,10 @@
 			inner join system_book_info on system_book_cart.bookId=system_book_info.id
 			where uid=#{uid}
 	</select>
+	<!-- 根据商品id移除出购物车 -->
+	<delete id="deleteCartById" parameterType="int">
+		delete from system_book_cart where cartId=#{id}
+	</delete>
 </mapper>
 
 

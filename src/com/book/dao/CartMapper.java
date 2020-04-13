@@ -33,6 +33,12 @@ public interface CartMapper {
 	 * @return 用户的购物车中的所有商品
 	 */
 	List<Cart> findCartsByUid(String uid);
+	/**
+	 * 根据购物车id移除商品
+	 * @param id--购物车中的编码
+	 * @return 1-成功 0-失败
+	 */
+	int deleteCartById(Integer id);
 }
 
 

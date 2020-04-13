@@ -17,6 +17,7 @@
     		<!-- /left -->
     		<div class="section-right">
     			<h3 align="center" style="margin-bottom: 20px; ">您选购的商品如下：</h3>
+    			<h3 align="center" style="margin-bottom: 14px; color: red;">${message }</h3>
     			<table  align="center"  cellpadding="0" cellspacing="0">
     				<tr>
     					<td class="header" width="200">书名</td>
@@ -33,7 +34,7 @@
     					<td>￥${cart.book.price }</td>
     					<td>${cart.count } 本</td>
     					<td>￥${cart.count*cart.book.price }</td>
-    					<td><a href="#?cartId=${cart.cartId }">移除</a></td>
+    					<td><a href="delete_cart?cartId=${cart.cartId }">移除</a></td>
     					</tr>
     				</c:forEach>
     				<tr>
