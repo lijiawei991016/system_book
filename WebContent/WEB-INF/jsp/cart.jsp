@@ -10,26 +10,11 @@
     <div id="container">
     	<!-- header -->
     	<%@ include file="user_include/header.jsp" %>
-    	<!-- /header -->  
-    	<form id="search-bar" action="" method="post">
-	    		书名：<input type="text" class="txt" name="condition" />
-	    		<input id="search-btn" type="submit" value=" 搜索图书 " />
-    	</form>   	
+    	<!-- /header -->  	
     	<div id="main">
-    		<div class="section-left">
-    			<div class="box-left">
-    				<div class="box-title">分类畅销榜</div>
-    				<div class="box-content">
-    					<p>·<a href="#">文学</a></p>
-    					<p>·<a href="#">小说</a></p>
-    					<p>·<a href="#">青春文学</a></p>
-    					<p>·<a href="#">旅游</a></p>
-    					<p>·<a href="#">哲学</a></p>
-    					<p>·<a href="#">百科</a></p>
-    					<p>·<a href="#">恐怖小说</a></p>    		
-    				</div>
-    			</div>
-    		</div>
+    		<!-- left -->
+    		<%@ include file="user_include/left.jsp" %>
+    		<!-- /left -->
     		<div class="section-right">
     			<h3 align="center" style="margin-bottom: 20px; ">您选购的商品如下：</h3>
     			<table  align="center"  cellpadding="0" cellspacing="0">
